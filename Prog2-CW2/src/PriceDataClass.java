@@ -6,7 +6,6 @@ import java.util.HashMap;
 
 /**
  * @author 24248134
- * @version 0.2
  */
 public class PriceDataClass 
 {
@@ -31,7 +30,7 @@ public class PriceDataClass
 	 * @param GetShipCost Calls the method that links to ServiceID[0] then returns the value from that method
 	 * @return Shipping-cost
 	 */
-	public double GetShipCost(int kg, int[] ServiceID)
+	public double GetShipCost(String kg, int[] ServiceID)
 	{
 		switch(ServiceID[0]) 
 		{
@@ -46,7 +45,7 @@ public class PriceDataClass
 		}
 		return 999.999; // Should not reach this >_<
 	}
-	private double RM2S(int kg, int i) // ServiceID { 4 , i } Royal Mail 2nd Signed...
+	private double RM2S(String kg, int i) // ServiceID { 4 , i } Royal Mail 2nd Signed...
 	{
 		switch(i) 
 		{
@@ -59,7 +58,7 @@ public class PriceDataClass
 		}
 		return 999.999; // Should not reach this >_<
 	}
-	private double RM1S(int kg, int i) // ServiceID { 3 , i } Royal Mail 1st Signed..
+	private double RM1S(String kg, int i) // ServiceID { 3 , i } Royal Mail 1st Signed..
 	{
 		switch(i) 
 		{
@@ -72,7 +71,7 @@ public class PriceDataClass
 		}
 		return 999.999; // Should not reach this >_<
 	}
-	private double RM2(int kg, int i) // ServiceID { 2 , i } Royal Mail 2nd...
+	private double RM2(String kg, int i) // ServiceID { 2 , i } Royal Mail 2nd...
 	{
 		switch(i) 
 		{
@@ -85,7 +84,7 @@ public class PriceDataClass
 		}
 		return 999.999; // Should not reach this >_<
 	}
-	private double RM1(int kg, int i) // ServiceID { 1 , i } Royal Mail 1st...
+	private double RM1(String kg, int i) // ServiceID { 1 , i } Royal Mail 1st...
 	{
 		switch(i) 
 		{
@@ -105,7 +104,7 @@ public class PriceDataClass
 	{
 		BufferedReader in = null;
 		String[] PathNames = {"RM1L","RM1LS","RM1MP","RM1MPS","RM1SP","RM1SPS","RM2L","RM2LS","RM2MP","RM2MPS","RM2SP","RM2SPS"};
-		String Path = "C:\\Users\\fearo\\git\\Prog2-CW2\\Prog2-CW2\\src\\CSV";
+		String Path = "C:\\Users\\fearo\\git\\Prog2-CW2\\Prog2-CW2\\src\\CSV"; // TODO Fix and make this it so it looks to a universal local place intead of this
 		for (int i = 0; i != PathNames.length; i++) 
 		{
 			try
