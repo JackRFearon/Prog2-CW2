@@ -8,7 +8,7 @@ public class testesttest
 	public static void main(String[] args) 
 	{ 
 		boolean FirstLine = false;
-		int p = 0;
+		int p = -1;
 		int k = 0;
 		BufferedReader tmp = null;
 		String Path = "src\\Import.csv";
@@ -27,8 +27,7 @@ public class testesttest
 		}
 		catch (FileNotFoundException e) {}
 		catch (IOException e) {}
-		
-		String JobData[][] = new String[(p-1)][8];
+		String JobData[][] = new String[(p)][8];
 		try{
 			tmp = new BufferedReader(new FileReader(Path));
 			try{
