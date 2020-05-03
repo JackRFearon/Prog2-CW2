@@ -1,33 +1,34 @@
 public class PackageClass 
 {
-	// Imported Details
+	// imported variables
 	private String PackageID;
 	private double width;
 	private double length;
 	private double height;
 	private String weight;
 	private boolean fragile;
-	// COME UP WITH BETTER COMMENT NAMES IDEAS AAA
+	// none-imported variables
 	private int[] ServiceID = {0,0};
 	private double Price;
 	
 	// Methods
-	public PackageClass(String S, double w, double l, double h, String Weight, boolean f,String test, boolean Signed) 
+	public PackageClass(String[] Data) 
 	{
-		this.PackageID = S;
-		this.width = w;
-		this.length = l;
-		this.height = h;
-		this.weight = Weight;
-		this.fragile = f;
-		if (test == "1st") // RM1...
+		this.PackageID = Data[0];
+		this.height = Double.parseDouble(Data[1]);
+		this.width = Double.parseDouble(Data[2]);
+		this.length = Double.parseDouble(Data[3]);
+		this.weight = Data[4];
+		this.fragile = Boolean.parseBoolean(Data[5]);
+		
+		if (Data[6] == "1st") // RM1...
 		{
-			if (Signed == true) { this.ServiceID[0] = 1; } // RM1
+			if ((Boolean.parseBoolean(Data[7])) == true) { this.ServiceID[0] = 1; } // RM1
 			else { this.ServiceID[0] = 3; } // RM1S
 		}
-		else if (test == "2nd") // RM2...
+		else if (Data[6] == "2nd") // RM2...
 		{
-			if (Signed == true) { this.ServiceID[0] = 2; } // RM2
+			if (Boolean.parseBoolean(Data[7]) == true) { this.ServiceID[0] = 2; } // RM2
 			else { this.ServiceID[0] = 4; } // RM2S
 		}
 	}
