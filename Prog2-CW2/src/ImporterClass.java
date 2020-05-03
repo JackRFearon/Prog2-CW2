@@ -22,7 +22,6 @@ public class ImporterClass
 					else 
 					{
 						JobData[k] = line.split(",");
-						PackageClass x = new PackageClass(JobData[k]);
 					}
 				}
 			}

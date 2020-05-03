@@ -27,6 +27,7 @@ public class testesttest
 		}
 		catch (FileNotFoundException e) {}
 		catch (IOException e) {}
+		
 		String JobData[][] = new String[(p-1)][8];
 		try{
 			tmp = new BufferedReader(new FileReader(Path));
