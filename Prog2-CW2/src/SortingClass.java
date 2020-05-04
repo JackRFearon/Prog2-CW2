@@ -5,8 +5,9 @@ public class SortingClass
 {
 	/**
 	 * @param ParcelSort Sorts the Package into if its a Letter, Small or Medium Parcel then Changes the kg to Nkg to work propperly with GetPackageCost
+	 * @return 
 	 */
-	public static void ParcelSort(double w, double l, double h, String kg, int[] ServiceID) 
+	public static double ParcelSort(double w, double l, double h, String kg, int[] ServiceID) 
 	{
 		double Nkg = Double.parseDouble(kg);
 		if (Nkg <= 750 && l <= 35.5 && w <= 25 && h <= 2.5) // Letter
@@ -22,7 +23,7 @@ public class SortingClass
 			ServiceID[1] = 3;
 		}
 		kg = WeightSort(Nkg, ServiceID); // Changes Nkg to a specific value to work properly with GetShipCost
-		PriceDataClass.GetShipCost(kg, ServiceID);
+		return PriceDataClass.GetShipCost(kg, ServiceID);
 	}
 	/**
 	 * @param WeightSort Takes Nkg as a double and returns it normliased to work with the CSV's then returns that double as a String

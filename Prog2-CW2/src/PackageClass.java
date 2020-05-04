@@ -20,7 +20,6 @@ public class PackageClass
 		this.length = Double.parseDouble(Data[3]);
 		this.weight = Data[4];
 		this.fragile = Boolean.parseBoolean(Data[5]);
-		
 		if (Data[6] == "1st") // RM1...
 		{
 			if ((Boolean.parseBoolean(Data[7])) == true) { this.ServiceID[0] = 1; } // RM1
@@ -31,5 +30,10 @@ public class PackageClass
 			if (Boolean.parseBoolean(Data[7]) == true) { this.ServiceID[0] = 2; } // RM2
 			else { this.ServiceID[0] = 4; } // RM2S
 		}
+		this.Price = SortingClass.ParcelSort(this.width, this.length, this.height, this.weight, ServiceID);
+	}
+	public void ToExport() 
+	{ // Exports all Data to ExportData[][] ready to be passed to ExporterClass/Export.CSV
+		
 	}
 }
