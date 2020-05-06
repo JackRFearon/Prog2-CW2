@@ -39,7 +39,7 @@ public class PriceDataClass
 		case 4:
 			return RM2SGetPrice(kg,ServiceID[1]);
 		}
-		return 999.999; // Should not reach this / Here only to stop Error
+		return 999.99; // Should not reach this / Here only to stop Error
 	}
 	/**
 	 * @param RM2S Routes to appropriate SubSerivice then sends back the Price by comparing the given kg against the list in the linked HashMaps
@@ -56,7 +56,7 @@ public class PriceDataClass
 		case 3: // ServiceID { 4 , 3 } Royal Mail Signed - Medium Parcel
 			return Double.parseDouble(RM2MPS.get(kg));
 		}
-		return 999.999; // Should not reach this / Here only to stop Error
+		return 999.9; // Should not reach this / Here only to stop Error
 	}
 	/**
 	 * @param RM2S Routes to appropriate SubSerivice then sends back the Price by comparing the given kg against the list in the linked HashMaps
@@ -73,7 +73,7 @@ public class PriceDataClass
 		case 3: // ServiceID { 3 , 3 } Royal Mail 1st Signed - Medium Parcel
 			return Double.parseDouble(RM1MPS.get(kg));
 		}
-		return 999.999; // Should not reach this / Here only to stop Error
+		return 999; // Should not reach this / Here only to stop Error
 	}
 	/**
 	 * @param RM2S Routes to appropriate SubSerivice then sends back the Price by comparing the given kg against the list in the linked HashMaps
@@ -90,7 +90,7 @@ public class PriceDataClass
 		case 3: // ServiceID { 2 , 3 } Royal Mail 2nd - Medium Parcel
 			return Double.parseDouble(RM2MP.get(kg));
 		}
-		return 999.999; // Should not reach this / Here only to stop Error
+		return 99; // Should not reach this / Here only to stop Error
 	}
 	/**
 	 * @param RM2S Routes to appropriate SubSerivice then sends back the Price by comparing the given kg against the list in the linked HashMaps
@@ -107,6 +107,6 @@ public class PriceDataClass
 		case 3: // ServiceID { 1 , 3 } Royal Mail 1st - Medium Parcel
 			return Double.parseDouble(RM1MP.get(kg));
 		}
-		return 999.999; // Should not reach this / Here only to stop Error
+		return 9; // Should not reach this / Here only to stop Error
 	}
 }

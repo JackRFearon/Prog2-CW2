@@ -32,6 +32,7 @@ public class ImporterClass
 		catch (IOException e) {}
 		if (p < 0) {p = 4;}
 		Main.ImportData = new String[p][8];
+		Main.ExportData = new String[p][8];
 		try{
 			tmp = new BufferedReader(new FileReader(Path));
 			try{
@@ -64,7 +65,7 @@ public class ImporterClass
 		{
 			try
 			{
-				in = new BufferedReader(new FileReader((Path + PathNames[i])));
+				in = new BufferedReader(new FileReader((Path + PathNames[i] + ".CSV")));
 				try
 				{
 					String line = "";	// Creates an empty string
@@ -73,19 +74,19 @@ public class ImporterClass
 						String[] x = line.split(",");
 						switch(i)
 						{
-						 case 1: PriceDataClass.RM1L.put(x[0],x[1]); break;
-						 case 2: PriceDataClass.RM1LS.put(x[0],x[1]); break;
-						 case 3: PriceDataClass.RM1MP.put(x[0],x[1]); break;
-						 case 4: PriceDataClass.RM1MPS.put(x[0],x[1]); break;
-						 case 5: PriceDataClass.RM1SP.put(x[0],x[1]); break;
-						 case 6: PriceDataClass.RM1SPS.put(x[0],x[1]); break;
-						 case 7: PriceDataClass.RM2L.put(x[0],x[1]); break;
-						 case 8: PriceDataClass.RM2LS.put(x[0],x[1]); break;
-						 case 9: PriceDataClass.RM2MP.put(x[0],x[1]); break;
-						 case 10: PriceDataClass.RM2MPS.put(x[0],x[1]); break;
-						 case 11: PriceDataClass.RM2SP.put(x[0],x[1]); break;
-						 case 12: PriceDataClass.RM2SPS.put(x[0],x[1]); break;
-						}		
+						 case 0: PriceDataClass.RM1L.put(x[0],x[1]); break; // Validated
+						 case 1: PriceDataClass.RM1LS.put(x[0],x[1]); break; // validated
+						 case 2: PriceDataClass.RM1MP.put(x[0],x[1]); break; // validated
+						 case 3: PriceDataClass.RM1MPS.put(x[0],x[1]); break; // validated
+						 case 4: PriceDataClass.RM1SP.put(x[0],x[1]); break;// validated
+						 case 5: PriceDataClass.RM1SPS.put(x[0],x[1]); break;// validated
+						 case 6: PriceDataClass.RM2L.put(x[0],x[1]); break;// validated
+						 case 7: PriceDataClass.RM2LS.put(x[0],x[1]); break;// validated
+						 case 8: PriceDataClass.RM2MP.put(x[0],x[1]); break;// validated
+						 case 9: PriceDataClass.RM2MPS.put(x[0],x[1]); break; // Error
+						 case 10: PriceDataClass.RM2SP.put(x[0],x[1]); break; // Validated
+						 case 11: PriceDataClass.RM2SPS.put(x[0],x[1]); break; // Validated
+						} 		
 					}
 				}
 				catch(IOException e) {}

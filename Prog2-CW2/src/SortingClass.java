@@ -1,3 +1,4 @@
+
 /**
  * @author 24248134
  */
@@ -22,7 +23,7 @@ public class SortingClass
 		{
 			ServiceID[1] = 3;
 		}
-		kg = WeightSort(Nkg, ServiceID); // Changes Nkg to a specific value to work properly with GetShipCost
+		kg = WeightSort(Nkg, ServiceID); // Changes Nkg to a specific value to work properly with GetShipCost		
 		return PriceDataClass.GetShipCost(kg, ServiceID);
 	}
 	/**
@@ -40,7 +41,7 @@ public class SortingClass
 		case 1: // Letters
 			 for (int i = 0; Match == false; i++) 
 			 {
-				 if (LetterWeights[i] > Nkg) 
+				 if (LetterWeights[i] >= Nkg) 
 				 {
 					 Nkg = LetterWeights[i];
 					 Match = true;
@@ -50,9 +51,9 @@ public class SortingClass
 		case 2: // Small Parcels
 			for (int i = 0; Match == false; i++) 
 			 {
-				 if (SmallParcelWeights[i] > Nkg) 
+				 if (SmallParcelWeights[i] >= Nkg) 
 				 {
-					 Nkg = LetterWeights[i];
+					 Nkg = SmallParcelWeights[i];
 					 Match = true;
 				 }
 			 }
@@ -60,14 +61,15 @@ public class SortingClass
 		case 3: // Large Parcels
 			for (int i = 0; Match == false; i++) 
 			 {
-				 if (LargeParcelWeights[i] > Nkg) 
+				 if (LargeParcelWeights[i] >= Nkg) 
 				 {
-					 Nkg = LetterWeights[i];
+					 Nkg = LargeParcelWeights[i];
 					 Match = true;
 				 }
 			 }
 			break;
 		}
-		return Double.toString(Nkg);
+		int xyz = (int) Nkg;
+		return Integer.toString(xyz);
 	}
 }
