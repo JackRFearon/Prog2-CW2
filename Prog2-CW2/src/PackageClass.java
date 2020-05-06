@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class PackageClass 
 {
 	// imported variables
@@ -14,6 +12,9 @@ public class PackageClass
 	private double Price;
 	
 	// Methods
+	/**
+	 * @param PackageClass Creates an instance of this class with the data attached to Data[]
+	 */
 	public PackageClass(String[] Data) 
 	{
 		this.PackageID = Data[0];
@@ -48,6 +49,10 @@ public class PackageClass
 		}		
 		this.Price = SortingClass.ParcelSort(this.width, this.length, this.height, this.weight, ServiceID);
 	}
+	/**
+	 * @param ToExport Exports the Data from this object
+	 * @return String of the Data thats been proceed
+	 */
 	public String[] ToExport() 
 	{ // Exports all Data to ExportData[][] ready to be passed to ExporterClass/Export.CSV
 		String[] tempArray = 
@@ -78,17 +83,5 @@ public class PackageClass
 		}
 		return tempArray;
 	}
-	public String PrintDebug() // DEBUG
-	{
-		String x = "[";
-		x += PackageID + ", ";
-		x += height + ", ";
-		x += width + ", ";
-		x += length + ", ";
-		x += weight + ", ";
-		x += fragile + ", ";
-		x += Arrays.toString(ServiceID) + ", ";
-		x += Price + "]";
-		return x;
-	}
+
 }

@@ -17,8 +17,9 @@ public class Main
 			ExportData[i] = x.ToExport();
 		}
 		
+		// Stage 3 - Export to Export.CSV 
 		
-		// Debugging Array Print
+		// Debugging Array Print  Remove in final Push
 		System.out.println();
 		for(int i = 0; i != ImportData.length; i++) 
 		{
@@ -29,7 +30,5 @@ public class Main
 		{
 			System.out.println(Arrays.toString(ExportData[i]) + " : Export Data" + i);
 		}
-		
-		
 	}
 }

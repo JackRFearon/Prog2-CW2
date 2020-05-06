@@ -1,8 +1,5 @@
 import java.util.HashMap;
 
-/**
- * @author 24248134
- */
 public class PriceDataClass 
 {
 	// HashMap KG-£ values

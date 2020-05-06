@@ -1,7 +1,3 @@
-
-/**
- * @author 24248134
- */
 public class SortingClass 
 {
 	/**
